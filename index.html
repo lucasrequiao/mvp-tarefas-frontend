@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Tarefas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Sistema de Tarefas</h1>
+            <p>Gerencie suas tarefas de forma simples e eficiente</p>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('home')">🏠 Início</button>
+            <button class="nav-tab" onclick="showTab('tarefas')">📝 Tarefas</button>
+            <button class="nav-tab" onclick="showTab('cadastrar')">➕ Nova Tarefa</button>
+        </nav>
+
+        <!-- Tab Home -->
+        <div id="home" class="tab-content active">
+            <h2>Bem-vindo ao Sistema de Tarefas!</h2>
+            <p>Este sistema permite que você gerencie suas tarefas de forma organizada e eficiente.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; text-align: center;">
+                    <h3>📝 Visualizar Tarefas</h3>
+                    <p>Veja todas as suas tarefas organizadas.</p>
+                    <button class="btn btn-primary" onclick="showTab('tarefas')">Ver Tarefas</button>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; text-align: center;">
+                    <h3>➕ Criar Nova Tarefa</h3>
+                    <p>Adicione novas tarefas com título, descrição, prazo e prioridade.</p>
+                    <button class="btn btn-success" onclick="showTab('cadastrar')">Criar Tarefa</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Tarefas -->
+        <div id="tarefas" class="tab-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2>📝 Lista de Tarefas</h2>
+                <button class="btn btn-success" onclick="showTab('cadastrar')">➕ Nova Tarefa</button>
+            </div>
+            
+            <div id="tarefas-container">
+                <div class="loading">Carregando tarefas...</div>
+            </div>
+        </div>
+
+        <!-- Tab Cadastrar -->
+        <div id="cadastrar" class="tab-content">
+            <h2>➕ Cadastrar Nova Tarefa</h2>
+            <form id="tarefa-form" style="max-width: 600px;">
+                <div class="form-group">
+                    <label for="titulo">Título *</label>
+                    <input type="text" id="titulo" name="titulo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" name="descricao" placeholder="Descreva sua tarefa..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="prazo">Prazo</label>
+                    <input type="date" id="prazo" name="prazo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="prioridade">Prioridade</label>
+                    <select id="prioridade" name="prioridade">
+                        <option value="baixa">Baixa</option>
+                        <option value="media" selected>Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">💾 Cadastrar Tarefa</button>
+                <button type="button" class="btn btn-info" onclick="showTab('tarefas')" style="margin-left: 1rem;">📝 Ver Tarefas</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
