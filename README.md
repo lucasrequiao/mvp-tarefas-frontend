@@ -28,7 +28,7 @@ tarefas-frontend/
 
 ### 1. Clone o repositório
 ```bash
-git clone <url-do-repositorio-frontend>
+git clone <https://github.com/lucasrequiao/mvp-tarefas-frontend>
 cd tarefas-frontend
 ```
 
@@ -36,32 +36,20 @@ cd tarefas-frontend
 Certifique-se de que o backend está rodando:
 ```bash
 # No repositório do backend
-python app.py
+pip install -r requirements.txt
 ```
 
 ### 3. Abra o frontend
 Abra o arquivo `index.html` no seu navegador ou use um servidor local:
 
-#### Opção 1: Abrir diretamente
+#### Abrir diretamente
 ```bash
 # No navegador, abra:
 file:///caminho/para/tarefas-frontend/index.html
 ```
 
-#### Opção 2: Servidor local (recomendado)
-```bash
-# Python 3
-python -m http.server 8000
-
-# Node.js (se tiver instalado)
-npx serve .
-
-# PHP (se tiver instalado)
-php -S localhost:8000
-```
-
 ### 4. Acesse a aplicação
-- **Local**: `http://localhost:8000`
+- **Local**: `http://localhost:5000`
 - **Backend**: `http://127.0.0.1:5000`
 
 ## 🎨 Funcionalidades
@@ -102,12 +90,6 @@ php -S localhost:8000
 - **Bordas**: Border-radius de 5px e 10px
 - **Sombras**: Box-shadow para profundidade
 
-### 📱 Responsividade
-- **Desktop**: Layout em grid com múltiplas colunas
-- **Tablet**: Adaptação automática do grid
-- **Mobile**: Layout em coluna única
-- **Breakpoint**: 768px
-
 ### ✨ Animações
 - **Transições suaves** em hover e focus
 - **Fade-in** ao carregar conteúdo
@@ -132,7 +114,7 @@ let url = 'http://SEU_BACKEND_URL:PORTA/add_tarefa';
 Certifique-se de que o backend está configurado para aceitar requisições do frontend:
 ```python
 # No backend (app.py)
-CORS(app, origins=["http://localhost:8000", "http://127.0.0.1:8000"])
+CORS(app, origins=["http://localhost:5000", "http://127.0.0.1:5000"])
 ```
 
 ## 📊 Estrutura do Código
@@ -163,41 +145,7 @@ CORS(app, origins=["http://localhost:8000", "http://127.0.0.1:8000"])
 1. **Criar tarefa**: Preencha o formulário e verifique se aparece na lista
 2. **Listar tarefas**: Verifique se todas as tarefas são exibidas
 3. **Deletar tarefa**: Confirme a exclusão e verifique se foi removida
-4. **Responsividade**: Teste em diferentes tamanhos de tela
-5. **Erros**: Teste com backend desligado
-
-### Teste de Compatibilidade
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
-
-## 🚀 Deploy
-
-### 📁 Hospedagem Estática
-O frontend pode ser hospedado em qualquer serviço de arquivos estáticos:
-
-#### GitHub Pages
-```bash
-# Push para branch gh-pages
-git subtree push --prefix tarefas-frontend origin gh-pages
-```
-
-#### Netlify
-```bash
-# Conecte o repositório ao Netlify
-# Configure build command: (vazio)
-# Configure publish directory: ./
-```
-
-#### Vercel
-```bash
-# Instale Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel --prod
-```
+4. **Erros**: Teste com backend desligado
 
 ### 🔧 Configuração de Produção
 1. **Altere a URL da API** para o backend em produção
@@ -219,23 +167,6 @@ Edite as variáveis CSS no arquivo `styles.css`:
 }
 ```
 
-### 📱 Breakpoints
-Ajuste os breakpoints para responsividade:
-```css
-@media (max-width: 768px) {
-  /* Estilos para mobile */
-}
-```
-
-### ⚡ Funcionalidades
-Adicione novas funcionalidades editando `script.js`:
-```javascript
-// Exemplo: função para filtrar tarefas
-function filtrarTarefas(status) {
-  // Implementar filtro
-}
-```
-
 ## 🤝 Contribuição
 
 1. Fork o projeto
@@ -244,13 +175,9 @@ function filtrarTarefas(status) {
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
 ## 🔗 Links Relacionados
 
-- **Backend**: [Repositório do Backend](<url-do-repositorio-backend>)
+- **Backend**: [Repositório do Backend](<https://github.com/lucasrequiao/mvp-tarefas-backend>)
 - **API Docs**: `http://127.0.0.1:5000/openapi`
 - **MDN Web Docs**: https://developer.mozilla.org/
 - **CSS Grid Guide**: https://css-tricks.com/snippets/css/complete-guide-grid/
@@ -261,14 +188,6 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 - **Cache**: Limpe o cache do navegador se houver problemas
 - **JavaScript**: Verifique o console para erros
 
-## 📞 Suporte
-
-Se encontrar problemas:
-1. Verifique o console do navegador (F12)
-2. Confirme se o backend está rodando
-3. Teste a API diretamente via Swagger
-4. Abra uma issue no repositório
-
 ---
 
-**Desenvolvido com ❤️ usando HTML, CSS e JavaScript**
+**Desenvolvido usando HTML, CSS e JavaScript**
